@@ -18,16 +18,16 @@ namespace OrchardSkills.OrchardCore.AuthCodeFlow.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddHttpClient("OrchardSkills.OrchardCore.AuthCodeFlow.ServerAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
+            builder.Services.AddHttpClient("ServerAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
                 .AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
 
             // Supply HttpClient instances that include access tokens when making requests to the server project
-            builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("OrchardSkills.OrchardCore.AuthCodeFlow.ServerAPI"));
+            builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("ServerAPI"));
 
             builder.Services.AddOidcAuthentication(cfg =>
             {
                 cfg.ProviderOptions.MetadataUrl = "https://localhost:44310/.well-known/openid-configuration";
-                cfg.ProviderOptions.ClientId = "OrchardSkills.OrchardCore.AuthCodeFlow-blazor-client";
+                cfg.ProviderOptions.ClientId = "ClientId";
                 cfg.ProviderOptions.Authority = "https://localhost:44310";
                 cfg.ProviderOptions.ResponseType = "code";
                 cfg.ProviderOptions.ResponseMode = "fragment";

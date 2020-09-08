@@ -53,12 +53,12 @@ namespace OrchardSkills.OrchardCore.AuthCodeFlow.Server
             // Replaces the default schemes to make default [Authorize] attribute work with Tokens.
             // Alternatively you can use [Authorize(AuthenticationSchemes = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme)]
             // in your api methods.
-            services.AddAuthentication(opt =>
-            {
-                opt.DefaultAuthenticateScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
-                opt.DefaultChallengeScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
-                opt.DefaultForbidScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
-            });
+            //services.AddAuthentication(opt =>
+            //{
+            //    opt.DefaultAuthenticateScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
+            //    opt.DefaultChallengeScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
+            //    opt.DefaultForbidScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
+            //});
 
             services.AddOpenIddict()
 

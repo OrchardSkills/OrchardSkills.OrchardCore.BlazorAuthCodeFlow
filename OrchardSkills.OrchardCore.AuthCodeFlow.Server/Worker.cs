@@ -29,11 +29,11 @@ namespace OrchardSkills.OrchardCore.AuthCodeFlow.Server
             
             var manager = scope.ServiceProvider.GetRequiredService<OpenIddictApplicationManager<OpenIddictEntityFrameworkCoreApplication>>();
 
-            if (await manager.FindByClientIdAsync("OrchardSkills.OrchardCore.AuthCodeFlow-blazor-client") is null)
+            if (await manager.FindByClientIdAsync("ClientId") is null)
             {
                 await manager.CreateAsync(new OpenIddictApplicationDescriptor
                 {
-                    ClientId = "OrchardSkills.OrchardCore.AuthCodeFlow-blazor-client",
+                    ClientId = "ClientId",
                     ConsentType = ConsentTypes.Explicit,
                     DisplayName = "Blazor client application",
                     Type = ClientTypes.Public,
