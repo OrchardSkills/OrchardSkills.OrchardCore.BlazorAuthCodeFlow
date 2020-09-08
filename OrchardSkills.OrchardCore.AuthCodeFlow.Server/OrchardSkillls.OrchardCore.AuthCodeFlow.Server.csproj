@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>Balosar.Server-22C6183C-4927-4801-90E6-4AC1E79183B5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.7" />
+	<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
+	<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.7" />
+	<PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="3.1.7" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="OpenIddict.AspNetCore" Version="3.0.0-beta3.20403.69" />
+	<PackageReference Include="OpenIddict.Core" Version="3.0.0-beta3.20403.69" />
+	<PackageReference Include="OpenIddict.EntityFrameworkCore" Version="3.0.0-beta3.20403.69" />
+  </ItemGroup>	
+	
+  <ItemGroup>
+    <ProjectReference Include="..\OrchardSkills.OrchardCore.AuthCodeFlow.Client\OrchardSkills.OrchardCore.AuthCodeFlow.Client.csproj" />
+    <ProjectReference Include="..\OrchardSkills.OrchardCore.AuthCodeFlow.Shared\OrchardSkills.OrchardCore.AuthCodeFlow.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
